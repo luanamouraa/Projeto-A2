@@ -4,6 +4,10 @@ import pandas as pd
 df = pd.read_excel('Reviews_iphone.xlsx')
 st.write(df)
 
+st.title('Projeto A2 Programação')
+st.header('Raspagem de comentários do Iphone 11 no site da Amazon')
+st.caption('Luana Rodrigues de Melo Moura')
+
 import streamlit as st
 import pandas as pd
 import numpy as np
