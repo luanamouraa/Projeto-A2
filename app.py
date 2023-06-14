@@ -13,9 +13,8 @@ st.write(df)
 import streamlit as st
 import pandas as pd
 import numpy as np
+import altair as alt
 
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=["positivo", "neutro", "negativo"])
+st.header('Gráficos')
+st.altair_chart(grafico_interativo_interacoes(df, marca_sidebar, ano_sidebar), use_container_width=True)
 
-st.bar_chart(chart_data)
