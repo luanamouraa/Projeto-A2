@@ -5,7 +5,7 @@ st.title('Projeto A2 Programação')
 st.header('Raspagem de comentários do Iphone 11 no site da Amazon')
 st.caption('Luana Rodrigues de Melo Moura')
 
-df = pd.read_excel('Reviews_iphone.xlsx')
+df = pd.read_excel('Reviews_iphone11.xlsx')
 st.write(df)
 
 import altair as alt
