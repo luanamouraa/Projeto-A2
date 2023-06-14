@@ -8,11 +8,6 @@ st.caption('Luana Rodrigues de Melo Moura')
 df = pd.read_excel('Reviews_iphone.xlsx')
 st.write(df)
 
-
-
-import streamlit as st
-import pandas as pd
-import numpy as np
 import altair as alt
 
 st.header('Gráficos')
