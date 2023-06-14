@@ -11,5 +11,5 @@ st.write(df)
 import altair as alt
 
 st.header('Gráficos')
-st.altair_chart(grafico_interativo_interacoes(df, marca_sidebar, ano_sidebar), use_container_width=True)
+st.altair_chart(grafico_interativo_interacoes(df, sentimentos, quantidade), use_container_width=True)
 
