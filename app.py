@@ -8,12 +8,13 @@ st.caption('Luana Rodrigues de Melo Moura')
 df = pd.read_excel('Reviews_iphone11.xlsx')
 st.write(df)
 
+
 import altair as alt
 
 st.header('Gráfico de análise de sentimento dos comentários')
 
 value_counts = (sentiment)
-contagem_sentimento = df.value_counts('sentiment').reset_index(name = 'contagem')
+contagem_sentimento = df.value_counts('sentimento').reset_index(name = 'contagem')
 grafico = alt.Chart(contagem_sentimento).mark_bar().encode(x='sentimento' , y='contagem', color='sentimento')
 st.altair_chart(grafico)
 
