@@ -17,13 +17,25 @@ contagem_sentimento = df.value_counts('sentiment').reset_index(name = 'contagem'
 grafico = alt.Chart(contagem_sentimento).mark_bar().encode(x='sentiment' , y='contagem')
 st.altair_chart(grafico) 
 
-import numpy as np
 
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['positive', 'neutral', 'negative'])
+from vega_datasets import data
 
-st.line_chart(chart_data)
+source = data.cars()
+
+chart = alt.Chart(source).mark_circle().encode(
+    x='sentiment',
+    y='contagem'
+).interactive()
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Altair native theme"])
+
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.altair_chart(chart, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Altair theme.
+    st.altair_chart(chart, theme=None, use_container_width=True)
 
 
 
