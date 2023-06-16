@@ -33,7 +33,7 @@ print(df[['text']])
      
 
 from wordcloud import WordCloud
-     
+st.set_option('deprecation.showPyplotGlobalUse', False) 
 
 wordcloud = WordCloud()
 wordcloud.generate_from_text(texto)
@@ -62,5 +62,5 @@ plt.figure(figsize = (15, 10))
 plt.imshow( wordcloud, interpolation = 'bilinear')
 plt.axis('off')
 plt.show() 
-st.set_option('deprecation.showPyplotGlobalUse', False) 
+
 st.pyplot()
