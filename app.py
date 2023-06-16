@@ -57,7 +57,7 @@ for palavra in lista:
         nova_linha += palavra + ' '
 wordcloud = WordCloud(stopwords=stopwords)
 
-st.header('WordCloud com as palavras que mais apareceram') 
+st.header('WordCloud com as palavras que mais apareceram nas avaliações do site') 
 
 wordcloud.generate_from_text(texto)
 plt.figure(figsize = (15, 10))
