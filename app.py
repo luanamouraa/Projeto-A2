@@ -17,12 +17,10 @@ contagem_sentimento = df.value_counts('sentiment').reset_index(name = 'contagem'
 grafico = alt.Chart(contagem_sentimento).mark_bar().encode(x='sentiment' , y='contagem')
 st.altair_chart(grafico) 
 
-import streamlit as st
-import pandas as pd
 import numpy as np
 
 chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
+    np.random.randn(20, 30),
     columns=['positive', 'neutral', 'negative'])
 
 st.line_chart(chart_data)
