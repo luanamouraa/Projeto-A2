@@ -18,3 +18,49 @@ grafico = alt.Chart(contagem_sentimento).mark_bar().encode(x='sentiment' , y='co
 st.altair_chart(grafico) 
 
 
+import pandas as pd
+import matplotlib.pyplot as plt
+     
+
+df = pd.read_excel('Reviews_iphone11.xlsx')
+texto = ''
+for linha in df['text']:
+    print(linha)
+    texto += linha + ' '
+     
+
+print(df[['text']])
+     
+
+from wordcloud import WordCloud
+     
+
+wordcloud = WordCloud()
+wordcloud.generate_from_text(texto)
+     
+<wordcloud.wordcloud.WordCloud at 0x7f8e21b79f60>
+
+stopwords = []
+arqstop = open('stopwords.txt')
+
+for linha in arqstop:
+    stopwords.append(linha.replace('\n', '').replace(' ' , ''))
+    stopwords += ['linha', 'in', 'and', 'the', 'n', 'pp', 'of', 'op']
+
+linha = "exemplo"
+lista = linha.split(' ')
+nova_lista = []
+nova_linha = ''
+
+for palavra in lista:
+     if len(palavra) > 3:
+        nova_lista.append(palavra)
+        nova_linha = ' '
+        nova_linha += palavra + ' '
+wordcloud = WordCloud(stopwords=stopwords)
+
+wordcloud.generate_from_text(texto)
+plt.figure(figsize = (15, 10))
+plt.imshow( wordcloud, interpolation = 'bilinear')
+plt.axis('off')
+plt.show()
