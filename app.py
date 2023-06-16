@@ -17,5 +17,4 @@ contagem_sentimento = df.value_counts('sentiment').reset_index(name = 'contagem'
 grafico = alt.Chart(contagem_sentimento).mark_bar().encode(x='sentiment' , y='contagem')
 st.altair_chart(grafico) 
 
-from wordcloud import WordCloud
-wordcloud = open('wordcloud_A2.png')
+
