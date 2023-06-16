@@ -20,7 +20,7 @@ st.altair_chart(grafico)
 import numpy as np
 
 chart_data = pd.DataFrame(
-    np.random.randn(20, 30),
+    np.random.randn(20, 3),
     columns=['positive', 'neutral', 'negative'])
 
 st.line_chart(chart_data)
