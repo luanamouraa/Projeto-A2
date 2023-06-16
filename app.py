@@ -37,8 +37,6 @@ from wordcloud import WordCloud
 
 wordcloud = WordCloud()
 wordcloud.generate_from_text(texto)
-     
-<wordcloud.wordcloud.WordCloud at 0x7f8e21b79f60>
 
 stopwords = []
 arqstop = open('stopwords.txt')
