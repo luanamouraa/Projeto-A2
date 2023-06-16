@@ -16,21 +16,3 @@ st.header('Gráfico de análise de sentimento dos comentários')
 contagem_sentimento = df.value_counts('sentiment').reset_index(name = 'contagem')
 grafico = alt.Chart(contagem_sentimento).mark_bar().encode(x='sentiment' , y='contagem')
 st.altair_chart(grafico) 
-
-
-from vega_datasets import data
-
-source = data.cars()
-
-chart = alt.Chart(source).mark_circle().encode(x='sentiment', y='contagem').interactive()
-
-tab1, tab2 = st.tabs(["Streamlit theme (default)", "Altair native theme"])
-
-with tab1:
-    st.altair_chart(chart, theme="streamlit", use_container_width=True)
-with tab2:
-    st.altair_chart(chart, theme=None, use_container_width=True)
-
-
-
-
